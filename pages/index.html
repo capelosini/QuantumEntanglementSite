@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desvendando o Emaranhamento Quântico</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -59,6 +59,29 @@
             </div>
             
             <p>Isso significa que há 50% de chance de medir ambos os qubits como 0 e 50% de chance de medir ambos como 1. Você <strong>nunca</strong> medirá um como 0 e o outro como 1. Seus destinos estão ligados.</p>
+        </section>
+
+        <section id="circuito-quantico">
+            <h2>Circuito quântico: simulação com 2 qubits emaranhados</h2>
+            <p>Podemos simular circuitos quanticos, onde aplicamos portas lógicas quanticas que podem afetar o estado do qubit. No exemplo abaixo vemos uma simulação com 2 qubits, iniciados com o estado 0.</p>
+            
+            <div class="cont-circuito-quantico">
+                <img src="/images/simulacao-circuito-quantico.png" alt="Simulação do circuito quântico" class="imagem-circuito-quantico"/>
+            </div>
+    
+            <p>Onde:</p>
+            <div class="cont-info-circuito">
+                <img src="/images/porta-hadamard.jpg" />
+                <p>
+                    Porta de hadamard que permite que o qubit 0 esteja em superposição.
+                </p>
+            </div>
+            <div class="cont-info-circuito">
+                <img src="/images/porta-cnot.jpg" />
+                <p>
+                    Porta de cnot que cria o entrelaçamento entre o qubit 0 e o qubit 1, onde quando o qubit 0 está no estado 1, o qubit 1 inverte seu estado.
+                </p>
+            </div>
         </section>
 
         <section id="aplicacoes">
