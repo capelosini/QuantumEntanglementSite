@@ -1,104 +1,172 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desvendando o Emaranhamento Quântico</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Emaranhamento Quântico — EPR, Teorema de Bell e Aplicações</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>🌌 Mundo Quântico</h1>
-            <p>Uma jornada educativa pelo emaranhamento na computação quântica</p>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Emaranhamento Quântico — EPR, Teorema de Bell, Nobel 2022 e Circuitos</h1>
+            <p class="lead">Um artigo didático e auto-contido sobre as bases conceituais e experimentais do
+                emaranhamento, as desigualdades de Bell e como criar estados emaranhados em circuitos quânticos usando
+                portas como Hadamard e CNOT.</p>
+        </header>
 
-    <nav>
-        <div class="container">
-            <a href="#home">Início</a>
-            <a href="#conceitos">Conceitos</a>
-            <a href="#bell">Estados de Bell</a>
-            <a href="#aplicacoes">Aplicações</a>
-            <a href="#glossario">Glossário</a>
-        </div>
-    </nav>
+        <nav class="card">
+            <strong>Sumário</strong>
+            <ol class="toc">
+                <li>Introdução ao emaranhamento</li>
+                <li>O paradoxo EPR</li>
+                <li>O teorema de Bell e a desigualdade CHSH</li>
+                <li>Três experimentos-chave (prêmios Nobel 2022)</li>
+                <li>O gato fantasma da física quântica</li>
+                <li>Circuitos quânticos: criação de estados emaranhados (Hadamard + CNOT)</li>
+                <li>Fórmulas relevantes</li>
+                <li>Conclusão e referências sugeridas</li>
+            </ol>
+        </nav>
 
-    <main class="container">
-        <section id="home" class="hero">
-            <h2>A "Ação Fantasmagórica à Distância"</h2>
-            <p>Bem-vindo ao mundo do <strong>emaranhamento quântico</strong>, um dos fenômenos mais estranhos e fascinantes da física. Albert Einstein o descreveu como "spukhafte Fernwirkung" (ação fantasmagórica à distância), e ele é a chave para o poder da computação quântica.</p>
-            <p>Aqui, vamos desvendar como partículas podem estar conectadas instantaneamente, não importa a distância que as separe.</p>
-            </section>
-
-        <section id="conceitos">
-            <h2>Conceitos Fundamentais</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>O Qubit</h3>
-                    <p>Esqueça os bits 0 ou 1. O qubit pode ser 0, 1, ou ambos ao mesmo tempo (superposição). É a unidade básica da informação quântica.</p>
-                </div>
-                <div class="card">
-                    <h3>Superposição</h3>
-                    <p>A habilidade de um qubit existir em múltiplos estados de uma vez, como uma moeda girando no ar antes de cair.</p>
-                </div>
-                <div class="card">
-                    <h3>Emaranhamento</h3>
-                    <p>Dois ou mais qubits em um estado quântico unificado. Medir um afeta instantaneamente o outro, não importa a distância.</p>
-                </div>
-            </div>
+        <section class="card" id="intro">
+            <h2>1. Introdução ao emaranhamento</h2>
+            <p>Emaranhamento (entanglement) é a correlação quântica entre duas ou mais partículas onde o estado global
+                não se factoriza em estados locais. Em termos matemáticos, um estado de duas partículas
+                \,\(|\psi\rangle\) é emaranhado se não existir \(|\phi_A\rangle\) e \(|\phi_B\rangle\) tais que
+                \(|\psi\rangle = |\phi_A\rangle\otimes|\phi_B\rangle\).</p>
         </section>
 
-        <section id="bell">
-            <h2>Os Estados de Bell: O Emaranhamento Perfeito</h2>
-            <p>Os Estados de Bell são a forma mais simples e pura de emaranhamento entre dois qubits. Eles são a "cola" que conecta os qubits. O estado mais famoso é o <strong>$|\Phi^+\rangle$</strong>:</p>
-            
-            <div class="formula">
-                <pre>$|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$</pre>
-            </div>
-            
-            <p>Isso significa que há 50% de chance de medir ambos os qubits como 0 e 50% de chance de medir ambos como 1. Você <strong>nunca</strong> medirá um como 0 e o outro como 1. Seus destinos estão ligados.</p>
+        <section class="card" id="epr">
+            <h2>2. O paradoxo EPR</h2>
+            <p>Em 1935, Einstein, Podolsky e Rosen (EPR) propuseram um argumento para mostrar que a mecânica quântica,
+                tal como era interpretada na época, parecia incompleta. Eles consideraram pares de partículas com
+                correlações perfeitas e concluíram que uma descrição de variáveis ocultas locais poderia ser necessária
+                para recuperar a <em>realidade</em> das propriedades medíveis.</p>
+            <p class="math">Um exemplo muito usado é o estado singlete (para spins):</p>
+            <div class="math">\[|\Psi^-\rangle = \frac{1}{\sqrt{2}}\left(|\uparrow\rangle_A|\downarrow\rangle_B -
+                |\downarrow\rangle_A|\uparrow\rangle_B\right).\]</div>
+            <p>Esse estado tem correlações perfeitas: se A mede \(S_z\) e obtém \(+\tfrac{\hbar}{2}\), B terá
+                automaticamente \(-\tfrac{\hbar}{2}\), mesmo que esteja distante — o que levou EPR a questionar a
+                completude da teoria.</p>
         </section>
 
-        <section id="circuito-quantico">
-            <h2>Circuito quântico: simulação com 2 qubits emaranhados</h2>
-            <p>Podemos simular circuitos quanticos, onde aplicamos portas lógicas quanticas que podem afetar o estado do qubit. No exemplo abaixo vemos uma simulação com 2 qubits, iniciados com o estado 0.</p>
-            
-            <div class="cont-circuito-quantico">
-                <img src="/images/simulacao-circuito-quantico.png" alt="Simulação do circuito quântico" class="imagem-circuito-quantico"/>
-            </div>
-    
-            <p>Onde:</p>
-            <div class="cont-info-circuito">
-                <img src="/images/porta-hadamard.jpg" />
-                <p>
-                    Porta de hadamard que permite que o qubit 0 esteja em superposição.
-                </p>
-            </div>
-            <div class="cont-info-circuito">
-                <img src="/images/porta-cnot.jpg" />
-                <p>
-                    Porta de cnot que cria o entrelaçamento entre o qubit 0 e o qubit 1, onde quando o qubit 0 está no estado 1, o qubit 1 inverte seu estado.
-                </p>
-            </div>
+        <section class="card" id="bell">
+            <h2>3. Teorema de Bell e a desigualdade CHSH</h2>
+            <p>John Bell (1964) mostrou que qualquer teoria de variáveis locais escondidas satisfaz certas desigualdades
+                que a mecânica quântica pode violar — portanto, esses modelos locais não reproduzem todas as previsões
+                quânticas.</p>
+            <p class="math">Uma forma prática usada em experimentos é a desigualdade CHSH. Definindo correlações
+                \(E(a,b)\) entre medidas com configurações \(a\) (em A) e \(b\) (em B), a combinação</p>
+            <div class="math">\[S = E(a,b) + E(a,b') + E(a',b) - E(a',b')\]</div>
+            <p>deve satisfazer para qualquer teoria local realista</p>
+            <div class="math">\[|S| \le 2.\]</div>
+            <p>A mecânica quântica prevê que para certas escolhas de ângulos (por ex. diferenças de 22.5°) o valor
+                máximo alcançável é \(|S|=2\sqrt{2}\), violando a desigualdade local.</p>
         </section>
 
-        <section id="aplicacoes">
-            <h2>Aplicações na Computação Quântica</h2>
-            <p>O emaranhamento não é apenas uma curiosidade teórica. Ele é um recurso essencial para:</p>
+        <section class="card" id="experiments">
+            <h2>4. Três experimentos-chave (que pavimentaram o Nobel de 2022)</h2>
+            <p>O Prêmio Nobel de Física de 2022 reconheceu três cientistas — <strong>John F. Clauser</strong>,
+                <strong>Alain Aspect</strong> e <strong>Anton Zeilinger</strong> — por experimentos inovadores que
+                demonstraram de forma inequívoca o emaranhamento quântico e suas implicações não locais. Cada um
+                contribuiu de forma única para testar e aplicar o teorema de Bell.</p>
+
+            <h3>Freedman & Clauser (1972)</h3>
+            <p>Clauser, em colaboração com Stuart Freedman, realizou o primeiro teste experimental direto da
+                desigualdade de Bell usando pares de fótons emitidos em uma transição atômica em cascata de cálcio. O
+                aparato envolvia polarizadores fixos e detectores que mediam coincidências entre polarizações dos
+                fótons. O resultado obtido foi uma clara <em>violação</em> das previsões das teorias locais de variáveis
+                ocultas, confirmando as previsões da mecânica quântica.</p>
+            <p>Esse experimento foi pioneiro por transformar uma questão filosófica em um teste físico mensurável.
+                Apesar de ainda existir a chamada “locality loophole”, ele abriu caminho para experimentos mais
+                refinados.</p>
+
+            <h3>Alain Aspect (1981–1982)</h3>
+            <p>Aspect e sua equipe, no Institut d’Optique em Paris, realizaram uma série de experimentos fundamentais
+                que resolveram lacunas deixadas por Clauser. Em particular, eles utilizaram moduladores acusto-ópticos
+                capazes de alterar a orientação dos polarizadores durante o voo dos fótons, garantindo que a escolha de
+                medição em A não pudesse influenciar causalmente o resultado em B.</p>
+            <p>Os resultados reforçaram a violação das desigualdades de Bell, fornecendo uma evidência mais robusta
+                contra qualquer explicação local realista. Os experimentos de Aspect foram considerados os mais
+                convincentes de sua época e estabeleceram o emaranhamento como uma característica real e verificável da
+                natureza.</p>
+
+            <h3>Anton Zeilinger (década de 1990)</h3>
+            <p>Zeilinger e sua equipe levaram o emaranhamento a um novo patamar, explorando suas aplicações em
+                comunicação e informação quântica. Em 1997, sua equipe demonstrou o <strong>teletransporte
+                    quântico</strong> de estados de fótons — um processo em que o estado quântico de uma partícula é
+                transferido para outra distante, sem transporte físico da partícula em si. Além disso, ele conduziu
+                experimentos de <em>entanglement swapping</em> (troca de emaranhamento), demonstrando a criação de
+                correlações entre partículas que nunca interagiram diretamente.</p>
+            <p>Esses experimentos mostraram que o emaranhamento é não apenas um fenômeno fundamental, mas também um
+                recurso prático para tecnologias emergentes como criptografia quântica, computação quântica e
+                comunicação segura.</p>
+        </section>
+
+        <section class="card" id="ghostcat">
+            <h2>5. O gato fantasma da física quântica — Quantum Imaging with Undetected Photons</h2>
+            <p>O chamado “gato fantasma” é uma referência curiosa à técnica de <em>Quantum Imaging with Undetected
+                    Photons</em>, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
+                um objeto usando fótons que nunca o tocaram diretamente — um fenômeno possível graças ao emaranhamento
+                quântico.</p>
+            <p>O experimento funciona usando pares de fótons emaranhados criados por conversão paramétrica. Um fóton (o
+                <em>signal</em>) interage com o objeto, enquanto o outro (o <em>idler</em>) é detectado em um sistema de
+                imagem. Apesar de o fóton detectado nunca ter tocado o objeto, sua correlação quântica com o fóton que
+                interagiu contém as informações necessárias para formar a imagem.</p>
+            <p>Essa técnica demonstra o poder das correlações quânticas e sua utilidade em aplicações práticas, como
+                imageamento biológico sensível e sensores quânticos. É chamada popularmente de “imagem fantasma” porque
+                o objeto aparece reconstruído a partir de partículas que nunca o viram — um verdadeiro “gato de
+                Schrödinger fotográfico”.</p>
+            <div class="math">\[|\Psi\rangle = \int d\omega_s d\omega_i\, f(\omega_s,\omega_i) |1_{\omega_s}\rangle_s
+                |1_{\omega_i}\rangle_i,\]</div>
+            <p class="citation">(Experimento: M. Genovese et al., <em>Science</em>, 2014 — demonstração de imageamento
+                com fótons não detectados)</p>
+        </section>
+
+        <section class="card" id="circuits">
+            <h2>6. Circuitos quânticos — gerar um estado emaranhado com Hadamard + CNOT</h2>
+            <p>Em computação quântica de porta, a forma mais simples de criar um par emaranhado (estado Bell) é aplicar
+                uma porta Hadamard em um qubit seguido por uma CNOT controlada por esse qubit:</p>
+            <pre class="code">q0: —[H]—■——
+             |
+q1: ——————⊕——
+// Resultado: estado |Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+      </pre>
+            <div class="math">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix},\quad \text{CNOT} =
+                \begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.\]</div>
+        </section>
+
+        <section class="card" id="formulas">
+            <h2>7. Fórmulas e equações relevantes (resumo)</h2>
             <ul>
-                <li><strong>Teletransporte Quântico:</strong> Transferir o estado de um qubit para outro qubit distante (sem mover matéria).</li>
-                <li><strong>Criptografia Quântica:</strong> Criar chaves de segurança que são impossíveis de "grampear" sem ser detectado.</li>
-                <li><strong>Algoritmos Quânticos:</strong> (Como o de Shor) Usar o emaranhamento para explorar um número massivo de possibilidades simultaneamente.</li>
+                <li>Estado singlete: \(|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)\)</li>
+                <li>CHSH: \(S = E(a,b) + E(a,b') + E(a',b) - E(a',b')\), com \(|S|\le 2\) localmente e \(|S|\le
+                    2\sqrt{2}\) quântico.</li>
+                <li>Probabilidade de coincidência: \(P_{++}(\alpha,\beta)=\tfrac{1}{2}\cos^2(\alpha-\beta)\)</li>
             </ul>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mundo Quântico. Conteúdo educacional.</p>
-        </div>
-    </footer>
+        <section class="card" id="conclusion">
+            <h2>8. Conclusão e caminhos para aprofundar</h2>
+            <p>O emaranhamento deixou de ser apenas um paradoxo filosófico para servir de base a tecnologias como
+                criptografia, comunicação e computação quântica. O fenômeno do “gato fantasma” mostra como as
+                correlações quânticas permitem acessar informação de modos não clássicos.</p>
+        </section>
+
+        <section class="card" id="conclusion">
+            <h2>9. Referências bibliográficas</h2>
+            <a href="http://"></a>
+        </section>
+
+        <footer>
+            <p class="citation">Baseado em experimentos de Clauser, Aspect, Zeilinger e colaboradores. Inclui imagem
+                fantasma quântica de 2014 como exemplo moderno de aplicação do emaranhamento.</p>
+        </footer>
+    </div>
 </body>
+
 </html>
