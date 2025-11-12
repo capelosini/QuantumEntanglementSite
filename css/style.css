@@ -43,6 +43,16 @@ p.lead {
     border: 1px solid rgba(0, 0, 0, 0.06)
 }
 
+img {
+    width: 100%;
+    border-radius: 9px;
+}
+.shrinked-img {
+    width: 60%;
+    margin: auto;
+    display: block;
+}
+
 h2 {
     color: #1e40af;
     margin-top: 0

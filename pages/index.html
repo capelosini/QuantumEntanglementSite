@@ -38,6 +38,7 @@
                 não se factoriza em estados locais. Em termos matemáticos, um estado de duas partículas
                 \,\(|\psi\rangle\) é emaranhado se não existir \(|\phi_A\rangle\) e \(|\phi_B\rangle\) tais que
                 \(|\psi\rangle = |\phi_A\rangle\otimes|\phi_B\rangle\).</p>
+            <img src="../images/emaranhamento.png" alt="Representação de maranhamento quântico">
         </section>
 
         <section class="card" id="epr">
@@ -52,6 +53,7 @@
             <p>Esse estado tem correlações perfeitas: se A mede \(S_z\) e obtém \(+\tfrac{\hbar}{2}\), B terá
                 automaticamente \(-\tfrac{\hbar}{2}\), mesmo que esteja distante — o que levou EPR a questionar a
                 completude da teoria.</p>
+            <img src="../images/paradoxo-EPR.png" alt="Paradoxo de EPR">
         </section>
 
         <section class="card" id="bell">
@@ -123,6 +125,7 @@
                 Schrödinger fotográfico”.</p>
             <div class="math">\[|\Psi\rangle = \int d\omega_s d\omega_i\, f(\omega_s,\omega_i) |1_{\omega_s}\rangle_s
                 |1_{\omega_i}\rangle_i,\]</div>
+            <img src="../images/experiemento-do-gato-fantasmagórico.png" alt="Experimento do gato fantasmagórico" class="shrinked-img">
             <p class="citation">(Experimento: M. Genovese et al., <em>Science</em>, 2014 — demonstração de imageamento
                 com fótons não detectados)</p>
         </section>
@@ -131,35 +134,23 @@
             <h2>6. Circuitos quânticos — gerar um estado emaranhado com Hadamard + CNOT</h2>
             <p>Em computação quântica de porta, a forma mais simples de criar um par emaranhado (estado Bell) é aplicar
                 uma porta Hadamard em um qubit seguido por uma CNOT controlada por esse qubit:</p>
-            <pre class="code">q0: —[H]—■——
-             |
-q1: ——————⊕——
-// Resultado: estado |Φ⁺⟩ = (|00⟩ + |11⟩)/√2
-      </pre>
+            <img src="../images/simulacao-circuito-quantico.png" alt="Simulação circutio quântico" class="shrinked-img">
             <div class="math">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix},\quad \text{CNOT} =
                 \begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.\]</div>
         </section>
 
-        <section class="card" id="formulas">
-            <h2>7. Fórmulas e equações relevantes (resumo)</h2>
-            <ul>
-                <li>Estado singlete: \(|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)\)</li>
-                <li>CHSH: \(S = E(a,b) + E(a,b') + E(a',b) - E(a',b')\), com \(|S|\le 2\) localmente e \(|S|\le
-                    2\sqrt{2}\) quântico.</li>
-                <li>Probabilidade de coincidência: \(P_{++}(\alpha,\beta)=\tfrac{1}{2}\cos^2(\alpha-\beta)\)</li>
-            </ul>
-        </section>
-
         <section class="card" id="conclusion">
-            <h2>8. Conclusão e caminhos para aprofundar</h2>
+            <h2>7. Conclusão e caminhos para aprofundar</h2>
             <p>O emaranhamento deixou de ser apenas um paradoxo filosófico para servir de base a tecnologias como
                 criptografia, comunicação e computação quântica. O fenômeno do “gato fantasma” mostra como as
                 correlações quânticas permitem acessar informação de modos não clássicos.</p>
         </section>
 
         <section class="card" id="conclusion">
-            <h2>9. Referências bibliográficas</h2>
-            <a href="http://"></a>
+            <h2>8. Referências bibliográficas</h2>
+            <a href="https://www.nature.com/articles/nature13586">Quantum imaging with undetected photons</a><br>
+            <a href="https://www.nobelprize.org/uploads/2022/10/popular-physicsprize2022-3.pdf">How entanglement has become a powerful tool (pdf)</a><br>
+            <a href="https://www.nobelprize.org/uploads/2023/10/advanced-physicsprize2022-4.pdf"> “For experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science” (pdf)</a><br>
         </section>
 
         <footer>
