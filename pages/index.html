@@ -13,22 +13,38 @@
     <div class="container">
         <header>
             <h1>Emaranhamento Quântico — EPR, Teorema de Bell, Nobel 2022 e Circuitos</h1>
-            <p class="lead">Um artigo didático e auto-contido sobre as bases conceituais e experimentais do
-                emaranhamento, as desigualdades de Bell e como criar estados emaranhados em circuitos quânticos usando
-                portas como Hadamard e CNOT.</p>
+            <p class="lead">Um artigo sobre a evolução do entendimento científico sobre o conceito, aplicações e
+                propriedades do emaranhamento quântico. Passando pelo paradoxo EPR, teorema de Bell, os experiementos
+                que levaram ao nobel de física de 2022 e aplicação em circuitos quânticos.</p>
         </header>
 
         <nav class="card">
             <strong>Sumário</strong>
-            <ol class="toc">
-                <li>Introdução ao emaranhamento</li>
-                <li>O paradoxo EPR</li>
-                <li>O teorema de Bell e a desigualdade CHSH</li>
-                <li>Três experimentos-chave (prêmios Nobel 2022)</li>
-                <li>O gato fantasma da física quântica</li>
-                <li>Circuitos quânticos: criação de estados emaranhados (Hadamard + CNOT)</li>
-                <li>Fórmulas relevantes</li>
-                <li>Conclusão e referências sugeridas</li>
+            <ol class="summary">
+                <a href="#intro">
+                    <li>Introdução ao emaranhamento</li>
+                </a>
+                <a href="#epr">
+                    <li>O paradoxo EPR</li>
+                </a>
+                <a href="#bell">
+                    <li>O teorema de Bell e a desigualdade CHSH</li>
+                </a>
+                <a href="#experiments">
+                    <li>Três experimentos-chave (prêmios Nobel 2022)</li>
+                </a>
+                <a href="#ghostcat">
+                    <li>O gato fantasma da física quântica</li>
+                </a>
+                <a href="#circuits">
+                    <li>Circuitos quânticos: criação de estados emaranhados (Hadamard + CNOT)</li>
+                </a>
+                <a href="#conclusion">
+                    <li>Conclusão e caminhos para aprofundar</li>
+                </a>
+                <a href="#references">
+                    <li>Referências bibliográficas</li>
+                </a>
             </ol>
         </nav>
 
@@ -46,7 +62,7 @@
             <p>Em 1935, Einstein, Podolsky e Rosen (EPR) propuseram um argumento para mostrar que a mecânica quântica,
                 tal como era interpretada na época, parecia incompleta. Eles consideraram pares de partículas com
                 correlações perfeitas e concluíram que uma descrição de variáveis ocultas locais poderia ser necessária
-                para recuperar a <em>realidade</em> das propriedades medíveis.</p>
+                para recuperar a realidade das propriedades medíveis.</p>
             <p class="math">Um exemplo muito usado é o estado singlete (para spins):</p>
             <div class="math">\[|\Psi^-\rangle = \frac{1}{\sqrt{2}}\left(|\uparrow\rangle_A|\downarrow\rangle_B -
                 |\downarrow\rangle_A|\uparrow\rangle_B\right).\]</div>
@@ -75,13 +91,14 @@
             <p>O Prêmio Nobel de Física de 2022 reconheceu três cientistas — <strong>John F. Clauser</strong>,
                 <strong>Alain Aspect</strong> e <strong>Anton Zeilinger</strong> — por experimentos inovadores que
                 demonstraram de forma inequívoca o emaranhamento quântico e suas implicações não locais. Cada um
-                contribuiu de forma única para testar e aplicar o teorema de Bell.</p>
+                contribuiu de forma única para testar e aplicar o teorema de Bell.
+            </p>
 
             <h3>Freedman & Clauser (1972)</h3>
             <p>Clauser, em colaboração com Stuart Freedman, realizou o primeiro teste experimental direto da
                 desigualdade de Bell usando pares de fótons emitidos em uma transição atômica em cascata de cálcio. O
                 aparato envolvia polarizadores fixos e detectores que mediam coincidências entre polarizações dos
-                fótons. O resultado obtido foi uma clara <em>violação</em> das previsões das teorias locais de variáveis
+                fótons. O resultado obtido foi uma clara violação das previsões das teorias locais de variáveis
                 ocultas, confirmando as previsões da mecânica quântica.</p>
             <p>Esse experimento foi pioneiro por transformar uma questão filosófica em um teste físico mensurável.
                 Apesar de ainda existir a chamada “locality loophole”, ele abriu caminho para experimentos mais
@@ -102,7 +119,7 @@
                 comunicação e informação quântica. Em 1997, sua equipe demonstrou o <strong>teletransporte
                     quântico</strong> de estados de fótons — um processo em que o estado quântico de uma partícula é
                 transferido para outra distante, sem transporte físico da partícula em si. Além disso, ele conduziu
-                experimentos de <em>entanglement swapping</em> (troca de emaranhamento), demonstrando a criação de
+                experimentos de entanglement swapping (troca de emaranhamento), demonstrando a criação de
                 correlações entre partículas que nunca interagiram diretamente.</p>
             <p>Esses experimentos mostraram que o emaranhamento é não apenas um fenômeno fundamental, mas também um
                 recurso prático para tecnologias emergentes como criptografia quântica, computação quântica e
@@ -111,22 +128,24 @@
 
         <section class="card" id="ghostcat">
             <h2>5. O gato fantasma da física quântica — Quantum Imaging with Undetected Photons</h2>
-            <p>O chamado “gato fantasma” é uma referência curiosa à técnica de <em>Quantum Imaging with Undetected
-                    Photons</em>, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
+            <p>O chamado “gato fantasma” é uma referência curiosa à técnica de Quantum Imaging with Undetected
+                    Photons, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
                 um objeto usando fótons que nunca o tocaram diretamente — um fenômeno possível graças ao emaranhamento
                 quântico.</p>
             <p>O experimento funciona usando pares de fótons emaranhados criados por conversão paramétrica. Um fóton (o
-                <em>signal</em>) interage com o objeto, enquanto o outro (o <em>idler</em>) é detectado em um sistema de
+                signal) interage com o objeto, enquanto o outro (o idler) é detectado em um sistema de
                 imagem. Apesar de o fóton detectado nunca ter tocado o objeto, sua correlação quântica com o fóton que
-                interagiu contém as informações necessárias para formar a imagem.</p>
+                interagiu contém as informações necessárias para formar a imagem.
+            </p>
             <p>Essa técnica demonstra o poder das correlações quânticas e sua utilidade em aplicações práticas, como
                 imageamento biológico sensível e sensores quânticos. É chamada popularmente de “imagem fantasma” porque
                 o objeto aparece reconstruído a partir de partículas que nunca o viram — um verdadeiro “gato de
                 Schrödinger fotográfico”.</p>
             <div class="math">\[|\Psi\rangle = \int d\omega_s d\omega_i\, f(\omega_s,\omega_i) |1_{\omega_s}\rangle_s
                 |1_{\omega_i}\rangle_i,\]</div>
-            <img src="../images/experiemento-do-gato-fantasmagórico.png" alt="Experimento do gato fantasmagórico" class="shrinked-img">
-            <p class="citation">(Experimento: M. Genovese et al., <em>Science</em>, 2014 — demonstração de imageamento
+            <img src="../images/experiemento-do-gato-fantasmagórico.png" alt="Experimento do gato fantasmagórico"
+                class="shrinked-img">
+            <p class="citation">(Experimento: M. Genovese et al., Science, 2014 — demonstração de imageamento
                 com fótons não detectados)</p>
         </section>
 
@@ -146,16 +165,18 @@
                 correlações quânticas permitem acessar informação de modos não clássicos.</p>
         </section>
 
-        <section class="card" id="conclusion">
+        <section class="card" id="references">
             <h2>8. Referências bibliográficas</h2>
             <a href="https://www.nature.com/articles/nature13586">Quantum imaging with undetected photons</a><br>
-            <a href="https://www.nobelprize.org/uploads/2022/10/popular-physicsprize2022-3.pdf">How entanglement has become a powerful tool (pdf)</a><br>
-            <a href="https://www.nobelprize.org/uploads/2023/10/advanced-physicsprize2022-4.pdf"> “For experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science” (pdf)</a><br>
+            <a href="https://www.nobelprize.org/uploads/2022/10/popular-physicsprize2022-3.pdf">How entanglement has
+                become a powerful tool (pdf)</a><br>
+            <a href="https://www.nobelprize.org/uploads/2023/10/advanced-physicsprize2022-4.pdf"> “For experiments with
+                entangled photons, establishing the violation of Bell inequalities and pioneering quantum information
+                science” (pdf)</a><br>
         </section>
 
         <footer>
-            <p class="citation">Baseado em experimentos de Clauser, Aspect, Zeilinger e colaboradores. Inclui imagem
-                fantasma quântica de 2014 como exemplo moderno de aplicação do emaranhamento.</p>
+            <p class="citation">Projeto extensivo de Física. Produção de site como artigo, sobre o tema do emaranhamento e os experimentos de Clauser, Aspect, Zeilinger e colaboradores.</p>
         </footer>
     </div>
 </body>
