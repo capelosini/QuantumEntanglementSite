@@ -50,10 +50,16 @@
 
         <section class="card" id="intro">
             <h2>1. Introdução ao emaranhamento</h2>
-            <p>Emaranhamento (entanglement) é a correlação quântica entre duas ou mais partículas onde o estado global
-                não se factoriza em estados locais. Em termos matemáticos, um estado de duas partículas
-                \,\(|\psi\rangle\) é emaranhado se não existir \(|\phi_A\rangle\) e \(|\phi_B\rangle\) tais que
-                \(|\psi\rangle = |\phi_A\rangle\otimes|\phi_B\rangle\).</p>
+            <p>No início do século XX, a física quântica emergiu para explicar fenômenos que a física clássica não
+                conseguia abordar. A equação de Schrödinger, criada em 1926, descreve a evolução de sistemas quânticos
+                por meio da função de onda 𝜓, que codifica probabilidades ao invés de certezas. Um conceito central
+                dessa teoria é a superposição, onde partículas podem existir em múltiplos estados simultaneamente até a
+                medição.</p>
+            <p>A interpretação de Copenhague, formulada por Bohr e Heisenberg, sugere que a função de onda não
+                representa uma realidade objetiva, mas apenas o conhecimento do sistema, sendo a medição o ato que
+                "colapsa" a superposição. Dentro dessa estrutura, surge o fenômeno do emaranhamento quântico, onde
+                partículas podem estar correlacionadas de forma inseparável, uma característica que se manifesta
+                diretamente da matemática quântica da época, abrindo caminho para novas descobertas.</p>
             <img src="../images/emaranhamento.png" alt="Representação de maranhamento quântico">
         </section>
 
@@ -73,21 +79,33 @@
         </section>
 
         <section class="card" id="bell">
-            <h2>3. Teorema de Bell e a desigualdade CHSH</h2>
-            <p>John Bell (1964) mostrou que qualquer teoria de variáveis locais escondidas satisfaz certas desigualdades
-                que a mecânica quântica pode violar — portanto, esses modelos locais não reproduzem todas as previsões
-                quânticas.</p>
-            <p class="math">Uma forma prática usada em experimentos é a desigualdade CHSH. Definindo correlações
-                \(E(a,b)\) entre medidas com configurações \(a\) (em A) e \(b\) (em B), a combinação</p>
-            <div class="math">\[S = E(a,b) + E(a,b') + E(a',b) - E(a',b')\]</div>
-            <p>deve satisfazer para qualquer teoria local realista</p>
-            <div class="math">\[|S| \le 2.\]</div>
-            <p>A mecânica quântica prevê que para certas escolhas de ângulos (por ex. diferenças de 22.5°) o valor
-                máximo alcançável é \(|S|=2\sqrt{2}\), violando a desigualdade local.</p>
+            <h2>3. Teorema de Bell e a Desigualdade CHSH</h2>
+            <p>Em 1964, John Bell mostrou que as teorias de variáveis locais ocultas
+                não podem reproduzir todas as previsões da mecânica quântica. Ele formulou as
+                desigualdades de Bell, que qualquer teoria local realista deve satisfazer. Isso levou à
+                desigualdade CHSH (Clauser, Horne, Shimony e Holt, 1969), uma maneira prática de testar
+                essas previsões experimentais.</p>
+
+            <p>A desigualdade CHSH é expressa por:</p>
+            <div class="math">
+                \[S = E(a,b) + E(a,b') + E(a',b) - E(a',b'),\]
+            </div>
+
+            <p>onde \(E(a,b)\) são as correlações entre medições feitas em A e B. Para teorias locais realistas, deve-se
+                ter:</p>
+            <div class="math">
+                \[|S| \leq 2.\]
+            </div>
+
+            <p>No entanto, a mecânica quântica prevê que, em certas condições, \(S\) pode ultrapassar 2, atingindo até
+                \(2\sqrt{2}\), violando a desigualdade. Experimentos, como os de Aspect
+                nos anos 1980, confirmaram essa violação, reforçando a ideia de que o mundo quântico é não-local e não
+                pode ser descrito por teorias clássicas.</p>
         </section>
 
+
         <section class="card" id="experiments">
-            <h2>4. Três experimentos-chave (que pavimentaram o Nobel de 2022)</h2>
+            <h2>4. Os três experimentos que pavimentaram o Nobel de 2022</h2>
             <p>O Prêmio Nobel de Física de 2022 reconheceu três cientistas — <strong>John F. Clauser</strong>,
                 <strong>Alain Aspect</strong> e <strong>Anton Zeilinger</strong> — por experimentos inovadores que
                 demonstraram de forma inequívoca o emaranhamento quântico e suas implicações não locais. Cada um
@@ -129,7 +147,7 @@
         <section class="card" id="ghostcat">
             <h2>5. O gato fantasma da física quântica — Quantum Imaging with Undetected Photons</h2>
             <p>O chamado “gato fantasma” é uma referência curiosa à técnica de Quantum Imaging with Undetected
-                    Photons, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
+                Photons, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
                 um objeto usando fótons que nunca o tocaram diretamente — um fenômeno possível graças ao emaranhamento
                 quântico.</p>
             <p>O experimento funciona usando pares de fótons emaranhados criados por conversão paramétrica. Um fóton (o
@@ -176,7 +194,8 @@
         </section>
 
         <footer>
-            <p class="citation">Projeto extensivo de Física. Produção de site como artigo, sobre o tema do emaranhamento e os experimentos de Clauser, Aspect, Zeilinger e colaboradores.</p>
+            <p class="citation">Projeto extensivo de Física. Produção de site como artigo, sobre o tema do emaranhamento
+                e os experimentos de Clauser, Aspect, Zeilinger e colaboradores.</p>
         </footer>
     </div>
 </body>
