@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Emaranhamento Quântico — EPR, Teorema de Bell e Aplicações</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
@@ -60,7 +60,7 @@
                 "colapsa" a superposição. Dentro dessa estrutura, surge o fenômeno do emaranhamento quântico, onde
                 partículas podem estar correlacionadas de forma inseparável, uma característica que se manifesta
                 diretamente da matemática quântica da época, abrindo caminho para novas descobertas.</p>
-            <img src="../images/emaranhamento.png" alt="Representação de maranhamento quântico">
+            <img src="./images/emaranhamento.png" alt="Representação de maranhamento quântico">
         </section>
 
         <section class="card" id="epr">
@@ -75,7 +75,7 @@
             <p>Esse estado tem correlações perfeitas: se A mede \(S_z\) e obtém \(+\tfrac{\hbar}{2}\), B terá
                 automaticamente \(-\tfrac{\hbar}{2}\), mesmo que esteja distante — o que levou EPR a questionar a
                 completude da teoria.</p>
-            <img src="../images/paradoxo-EPR.png" alt="Paradoxo de EPR">
+            <img src="./images/paradoxo-EPR.png" alt="Paradoxo de EPR">
         </section>
 
         <section class="card" id="bell">
@@ -145,7 +145,7 @@
         </section>
 
         <section class="card" id="ghostcat">
-            <h2>5. O gato fantasma da física quântica — Quantum Imaging with Undetected Photons</h2>
+            <h2>5. O gato fantasma da física quântica</h2>
             <p>O chamado “gato fantasma” é uma referência curiosa à técnica de Quantum Imaging with Undetected
                 Photons, desenvolvida por Anton Zeilinger e colaboradores em 2014. A ideia é obter a imagem de
                 um objeto usando fótons que nunca o tocaram diretamente — um fenômeno possível graças ao emaranhamento
@@ -161,20 +161,57 @@
                 Schrödinger fotográfico”.</p>
             <div class="math">\[|\Psi\rangle = \int d\omega_s d\omega_i\, f(\omega_s,\omega_i) |1_{\omega_s}\rangle_s
                 |1_{\omega_i}\rangle_i,\]</div>
-            <img src="../images/experiemento-do-gato-fantasmagórico.png" alt="Experimento do gato fantasmagórico"
+            <img src="./images/experiemento-do-gato-fantasmagórico.png" alt="Experimento do gato fantasmagórico"
                 class="shrinked-img">
-            <p class="citation">(Experimento: M. Genovese et al., Science, 2014 — demonstração de imageamento
-                com fótons não detectados)</p>
         </section>
 
         <section class="card" id="circuits">
-            <h2>6. Circuitos quânticos — gerar um estado emaranhado com Hadamard + CNOT</h2>
-            <p>Em computação quântica de porta, a forma mais simples de criar um par emaranhado (estado Bell) é aplicar
-                uma porta Hadamard em um qubit seguido por uma CNOT controlada por esse qubit:</p>
-            <img src="../images/simulacao-circuito-quantico.png" alt="Simulação circutio quântico" class="shrinked-img">
-            <div class="math">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix},\quad \text{CNOT} =
-                \begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.\]</div>
+            <h2>6. Circuitos quânticos: criação de estados emaranhados (Hadamard + CNOT)</h2>
+            <p>Em computação quântica de porta, a forma mais simples de criar um par emaranhado (estado de Bell) é
+                aplicar
+                uma porta Hadamard em um qubit seguido por uma porta CNOT usando esse qubit como controle. Esse processo
+                transforma um estado clássico como \(|00\rangle\) em um estado quântico não separável.</p>
+
+            <p>Os <strong>estados de Bell</strong> constituem os quatro estados maximamente emaranhados de dois qubits.
+                Eles representam a forma mais intensa de correlação quântica, e nenhum deles pode ser escrito como
+                produto
+                de estados individuais. São definidos como:</p>
+
+            <div class="math">
+                \[
+                \begin{aligned}
+                |\Phi^{+}\rangle &= \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle),\\
+                |\Phi^{-}\rangle &= \tfrac{1}{\sqrt{2}}(|00\rangle - |11\rangle),\\
+                |\Psi^{+}\rangle &= \tfrac{1}{\sqrt{2}}(|01\rangle + |10\rangle),\\
+                |\Psi^{-}\rangle &= \tfrac{1}{\sqrt{2}}(|01\rangle - |10\rangle).\\
+                \end{aligned}
+                \]
+            </div>
+
+            <p>O circuito Hadamard + CNOT gera especificamente o estado \(|\Phi^{+}\rangle\) quando aplicado ao estado
+                inicial \(|00\rangle\):</p>
+
+            <img src="./images/simulacao-circuito-quantico.png" alt="Simulação circutio quântico" class="shrinked-img">
+
+            <div class="math">
+                \[
+                H = \frac{1}{\sqrt{2}}
+                \begin{pmatrix}
+                1 & 1\\
+                1 & -1
+                \end{pmatrix},
+                \quad
+                \text{CNOT} =
+                \begin{pmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&0&1\\
+                0&0&1&0
+                \end{pmatrix}.
+                \]
+            </div>
         </section>
+
 
         <section class="card" id="conclusion">
             <h2>7. Conclusão e caminhos para aprofundar</h2>
@@ -191,6 +228,7 @@
             <a href="https://www.nobelprize.org/uploads/2023/10/advanced-physicsprize2022-4.pdf"> “For experiments with
                 entangled photons, establishing the violation of Bell inequalities and pioneering quantum information
                 science” (pdf)</a><br>
+            <a href="https://www.bluequbit.io/blog/quantum-circuit">Introduction to quantum circuits</a>
         </section>
 
         <footer>
